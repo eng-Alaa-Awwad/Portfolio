@@ -250,11 +250,49 @@ span {
 
 .portfolio-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   align-items: center;
   gap: 2.5rem;
 }
-.portfolio-container .portfolio-box {
+
+.portfolio__box {
+  width: 100%;
+  border: 5px solid var(--bg-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.portfolio__box:hover {
+  transform: translateY(-7px);
+  box-shadow: 2.5px 2.5px 15px 1px var(--main-color);
+}
+
+.portfolio__image img {
+  width: 100%;
+}
+
+.portfolio__info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 2rem;
+  line-height: 1.6;
+}
+.portfolio__info h3 {
+  padding-bottom: 10px;
+}
+
+.portfolio__info a {
+  display: flex;
+  gap: 10px;
+}
+.portfolio__info a span:nth-child(2) {
+  color: var(--text-color);
+}
+
+/* .portfolio-container .portfolio-box {
   position: relative;
   border-radius: 2rem;
   box-shadow: 0 0 1rem var(--bg-color);
@@ -308,43 +346,7 @@ span {
 .portfolio-layer a i {
   font-size: 2rem;
   color: var(--second-bg-color);
-}
-
-.contact h2 {
-  margin-bottom: 3rem;
-}
-
-.contact form {
-  max-width: 70rem;
-  margin: 1rem auto;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-.contact form .input-box {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.contact form .input-box input,
-.contact form textarea {
-  width: 100%;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-  background-color: var(--second-bg-color);
-  border-radius: 0.8rem;
-  margin: 0.7rem 0;
-}
-.contact form .input-box input {
-  width: 49%;
-}
-.contact form textarea {
-  resize: none;
-}
-.contact form .btn {
-  margin-top: 2rem;
-  cursor: pointer;
-}
+} */
 
 .footer {
   display: flex;
@@ -352,7 +354,7 @@ span {
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem 9%;
-  background-color: var(--second-bg-color);
+  background-color: var(bg-color);
 }
 
 .footer-text p {
@@ -399,9 +401,6 @@ span {
   }
   .portfolio {
     padding-bottom: 7rem;
-  }
-  .contact {
-    min-height: auto;
   }
 }
 
@@ -467,9 +466,6 @@ span {
 }
 
 @media (max-width: 450px) {
-  .contact form .input-box input {
-    width: 100%;
-  }
   .footer {
     flex-direction: column-reverse;
   }

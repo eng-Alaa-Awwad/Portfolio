@@ -1,4 +1,5 @@
 import skills from "../data/skills-data.js";
+import projects from "../data/projects-data.js";
 /*==================== toggle icon navbar ====================*/
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
@@ -86,4 +87,26 @@ skills.forEach((skill) => {
   <div class="skill-par" style="--percentage: ${skill.percentage}" per="${skill.percentage}"></div>
   </div>`;
   skillsContainer.insertAdjacentHTML("beforeend", markup);
+});
+
+// ################# add projects data ###########
+
+const projectsContainer = document.querySelector(".portfolio-container");
+projects.forEach((project) => {
+  const markup = `<div class="portfolio__box">
+  <div class="portfolio__image">
+    <img src="./images/projects/${project.image}" alt="${project.name}" />
+  </div>
+  <div class="portfolio__info">
+    <h3>${project.name}</h3>
+    <a href="${project.githubLink}" target="_blank"
+      ><span><i class="bx bxl-github"></i></span
+      ><span>Github Repository</span></a
+    >
+    <a href="${project.previewLink}" target="_blank"
+      ><span><i class="bx bx-world"></i></span><span>privew</span></a
+    >
+  </div>
+</div>`;
+  projectsContainer.insertAdjacentHTML("beforeend", markup);
 });
