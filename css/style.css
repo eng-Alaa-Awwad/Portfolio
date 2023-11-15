@@ -13,12 +13,12 @@
 /* --bg-color: #1f242d;
   --second-bg-color: #323946;
   --text-color: #fff;
-  --main-color: #f4880c; */
+  --main-color: #0ef; */
 :root {
   --bg-color: #1f242d;
   --second-bg-color: #323946;
   --text-color: #fff;
-  --main-color: #0ef;
+  --main-color: #f4880c;
 }
 
 html {
