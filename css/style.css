@@ -172,6 +172,7 @@ span {
   justify-content: center;
   gap: 2rem;
   background-color: var(--second-bg-color);
+  overflow: hidden;
 }
 .about-img img {
   width: 35vw;
