@@ -270,6 +270,7 @@ span {
 
 .portfolio__image img {
   width: 100%;
+  aspect-ratio: 2/1;
 }
 
 .portfolio__info {
